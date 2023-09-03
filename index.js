@@ -1,26 +1,26 @@
 const  fs = require('fs');
 
-console.log('READ START');
-// Asynchronous way to read file
+// console.log('READ START');
+// // Asynchronous way to read file
 
-fs.readFile('input.txt',function(err,data){
-    if(err){
-        console.log(err);
-        return err;
-    }
-    console.log('Data: ', data.toString());
-    console.log('READ END');
-    return data;
-} );
+// fs.readFile('input.txt',function(err,data){
+//     if(err){
+//         console.log(err);
+//         return err;
+//     }
+//     console.log('Data: ', data.toString());
+//     console.log('READ END');
+//     return data;
+// } );
 
-console.log('OTHER STUFF');
+// console.log('OTHER STUFF');
 
-//synchronous way to read file
+// //synchronous way to read file
 
-const data  = fs.readFileSync('input.txt');
-console.log('Data',data.toString());
-console.log('READ END');
-console.log('OTHER STUFF');
+// const data  = fs.readFileSync('input.txt');
+// console.log('Data',data.toString());
+// console.log('READ END');
+// console.log('OTHER STUFF');
 
 
 
@@ -48,4 +48,42 @@ console.log('OTHER STUFF');
 
 
 //WRITE
+
+
+//Writing to file
+
+fs.writeFile('input.txt','"Subhadip kundu"',(ifErr)=>{
+    if (ifErr) {
+        console.log('You got error: ',ifErr);
+    }
+    else{
+        console.log('Success in writing file!');
+    }
+});
+
+
+//Append to file
+
+fs.appendFile('input.txt','  --Engineer','utf8',(errr,)=>{
+    if (errr) {
+        console.log('You got error: ',errr);
+    }
+    else{
+        console.log('Success in append file!');
+    }
+});
+
+
+
+//DELETE
+
+// fs.unlink("input.txt",(e)=>{
+//     if(e){
+//         console.log(e);
+//     }
+//     else{
+//         console.log('Successfully deleted');
+//     }
+// })
+
 
